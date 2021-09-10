@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- For favicon -->
+    <link rel="icon" type="image/icon" sizes="32x32" href="images/favicon.png">
+    <!-- For 3 state toggle switch -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- For collapse -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- For icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- For style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="mid">
+    <div class="calculator">
+        <div class="content">
+            <div class="calc">
+                <span>Calc</span>
+            </div>
+            <!-- For applying theme -->
+            <div class="theme">
+                <span>THEME</span>
+                <div class="tw_toggle">
+                    <input type="radio" name="theme" value="green" onclick="left()">
+                    <label class="toggle toggle_yes"><i class="bi bi-record-fill"></i></label>
+                    <input checked type="radio" name="theme" value="blue" onclick="mid()">
+                    <label class="toggle toggle_yes"><i class="bi bi-record-fill"></i></label>
+                    <input type="radio" name="theme" value="grey" onclick="right()">
+                    <label class="toggle toggle_yes"><i class="bi bi-record-fill"></i></label>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <form name="form">
+            <input name="screen" id="display" placeholder="0" disabled>
+
+            </input>
+        </form>
+        <!-- For scientific operations -->
+        <div id="drop">
+            <a class="drop_btn" data-toggle="collapse" data-target="#scientific"><i class="bi bi-chevron-double-down"></i></a>
+            <div class="collapse" id="scientific">
+                <button class="sc_btn" onclick="insertNum('sin')">sin</button>
+                <button class="sc_btn" onclick="insertNum('cos')">cos</button>
+                <button class="sc_btn" onclick="insertNum('tan')">tan</button>
+                <button class="sc_btn" onclick="insertNum('log')">ln</button>
+                <br>
+                <button class="sc_btn" onclick="insertNum('e')">e</button>
+                <button class="sc_btn" onclick="insertNum('⫪')">&#960</button>
+                <button class="sc_btn" onclick="insertNum('(')">(</button>
+                <button class="sc_btn" onclick="insertNum(')')">)</button>
+                <br>
+                <button class="sc_btn" onclick="insertNum('√')">&#8730x</button>
+                <button class="sc_btn" onclick="insertNum('∛')">&#8731x</button>
+                <button class="sc_btn" onclick="insertNum('²')">x&#178</button>
+                <button class="sc_btn" onclick="insertNum('^')">&#8743</button>
+                <br>
+            </div>
+        </div>
+        <!-- For standard operations -->
+        <div id="keys">
+            <button class="st_btn" onclick="insertNum(7)">7</button>
+            <button class="st_btn" onclick="insertNum(8)">8</button>
+            <button class="st_btn" onclick="insertNum(9)">9</button>
+            <button class="st_btn reset" onclick="eraseNum()"><i class="bi bi-backspace-fill"></i></button>
+            <br>
+            <button class="st_btn" onclick="insertNum(4)">4</button>
+            <button class="st_btn" onclick="insertNum(5)">5</button>
+            <button class="st_btn" onclick="insertNum(6)">6</button>
+            <button class="st_btn" onclick="insertNum('/')">/</button>
+            <br>
+            <button class="st_btn" onclick="insertNum(1)">1</button>
+            <button class="st_btn" onclick="insertNum(2)">2</button>
+            <button class="st_btn" onclick="insertNum(3)">3</button>
+            <button class="st_btn" onclick="insertNum('*')">&#215</button>
+            <br>
+            <button class="st_btn" onclick="insertNum('.')">.</button>
+            <button class="st_btn" onclick="insertNum(0)">0</button>
+            <button class="st_btn" onclick="insertNum('%')">%</button>
+            <button class="st_btn" onclick="insertNum('+')">+</button>
+            <br>
+            <button class="st_btn reset" onclick="clearAll()">C</button>
+            <button class="st_btn equal" onclick="equalTo()">=</button>
+            <button class="st_btn" onclick="insertNum('-')">-</button>
+        </div>
+    </div>
+    <!-- My copyright -->
+    <div class="c_right">
+        <span>Developed by Simran Bhalode</span>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
